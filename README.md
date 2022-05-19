@@ -1,0 +1,2 @@
+# matrixFlatten
+Matrix Flatten algorithm
