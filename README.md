@@ -3,7 +3,7 @@
 3D Matrix Flatten algorithm
 
 # How it works
-Let's first start of with a 2D matrix ```Q``` [n x m] (where n is the number of rows and m is the number of columns). to be flattened we'll need a 1D matrix ```L``` of length n * m. 
+Let's first start of with a 2D matrix Q [n x m] (where n is the number of rows and m is the number of columns). to be flattened we'll need a 1D matrix L of length n * m. 
 
 We know that: ```Q[0, 0] = L[0]``` and that ```Q[0, 1] = L[1]``` and that ```Q[0, m - 1] = L[m - 1]``` and that ```Q[1, 0] = L[m]``` and that ```Q[1, 1] = L[m + 1]```. 
 
@@ -17,4 +17,4 @@ We know that ```Q[1, 1, 0] = L[m + 1]``` and that ```Q[n - 1, m - 1, 0] = L[m - 
 
 From the above, it can be concluded that every time we jump 1 plane (from k = 0 to k = 1 for example), we jump nm elements
 
-So, the equation for 3D matrix flattening would be (assuming indexing using i, j, k for the 3D matrix and y for the 1D matrix: ```y = j + i * m + k * n * m```).
+So, the equation for 3D matrix flattening would be (assuming indexing using i, j, k for the 3D matrix and y for the 1D matrix): ```y = j + i * m + k * n * m```.
