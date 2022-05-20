@@ -9,25 +9,22 @@ q = n * m * p
 
 matrix3d = np.zeros((n, m, p))
 matrix1d = np.zeros(q)
-y = 0
 
-for k in range(p):
-    for j in range(m):
-        for i in range(n):
-            matrix3d[i, j, k] = randint(0, 99)
-            matrix1d[y] = matrix3d[i, j, k]
-            y += 1
-
-
-
-# initialIdx
-# 
-
-
+# Flatting the 3d matrix
 for i in range(n):
     for j in range(m):
         for k in range(p):
-            idx = i + j * n + k * n * m
-            if matrix1d[idx] != matrix3d[i, j, k]:
-                print("error at i, j, j = " + str(i) + " " + str(j) + " " + str(k))
+            matrix3d[i, j, k] = randint(0, 99)
+            matrix1d[j + i * m + k * n * m] = matrix3d[i, j, k]
+
+# Testing out the flatting algorithm using random indecies
+
+for i in range(n * m * p):
+    i = randint(0, n - 1)
+    j = randint(0, m - 1)
+    k = randint(0, p - 1)
+    if matrix1d[j + i * m + k * n * m] != matrix3d[i, j, k]:
+        print("error at i, j, j = " + str(i) + " " + str(j) + " " + str(k))
+print("matrix flatten done correctly")
+
 
